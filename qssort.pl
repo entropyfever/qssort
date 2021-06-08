@@ -95,6 +95,11 @@ qssort(Filename, Ans) :- set_prolog_flag(stack_limit,  2000000000),
 						bfs(InitStates, state(_, _, A)), formatAns(A, Ans), !.
 
 
-main() :- qssort('qs10.txt', Answer), writeln(Answer), fail.
+main() :- qssort('qs1.txt', Answer), writeln(Answer), fail.
+
+/* Statistics */
+qs1() :- time(qssort('qs1.txt', A)), writeln(A), statistics().
+qs9() :- time(qssort('qs9.txt', A)), writeln(A), statistics().
+qs10() :- time(qssort('qs10.txt', A)), writeln(A), statistics().
 
 
