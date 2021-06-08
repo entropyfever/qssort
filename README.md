@@ -1,11 +1,13 @@
+# Sort a queue using a temporary stack with minimum number of operations
+
 ## Problem
 
 Suppose we have N natural numbers in a queue. ex queue = [3, 14, 1, 20] and an empty stack
 
-We are allowed to make only two actions:
+We are allowed to make only two actions / operations:
 
-Action "Q": Deque an element from the queue and push it to the stack.
-Action "S": Pop an element from the stack and enque it in the queue.
+- Action "Q": Deque an element from the queue and push it to the stack.
+- Action "S": Pop an element from the stack and enque it in the queue.
 
 In the above example, the following actions sort the queue in ascending order:
 
@@ -43,7 +45,7 @@ There is a trivial solution:
 
 You can just rotate the queue by actions: "QS" (move the first number to the end of the queue) and when you reach the largest number, push it to the stack. Repeat this process until the queue is empty. The stack now contains all the numbers with the top being the smallest number. So you just pop them out one by one and you have a sorted queue.
 
-## Solution
+## Solution (minimum number of actions to sort the queue)
 
 Search the solution space by using BFS and making one action at a time.
 
